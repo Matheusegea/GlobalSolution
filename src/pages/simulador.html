@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Enchentes - AlertaEnchentes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/landing_page.css">
+    <link rel="stylesheet" href="../css/simulador.css">
+    <link rel="stylesheet" href="../css/contato-form.css">
+</head>
+<body>
+    <header class="__header">
+        <div class="__header-container">
+            <div class="__logo">Alerta<span>Enchentes</span></div>
+            <nav class="__nav">
+                <a href="../../index.html" class="__nav-link">Home</a>
+                <a href="./simulador.html" class="__nav-link ativo">Simular Enchente</a>
+                <a href="./quiz.html" class="__nav-link">Quiz</a>
+            </nav>
+            <div class="__menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <div class="__mobile-nav" id="mobileNav">
+        <div class="__close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </div>
+        <a href="../../index.html" class="__mobile-link">Home</a>
+        <a href="./simulador.html" class="__mobile-link ativo">Simular Enchente</a>
+        <a href="./quiz.html" class="__mobile-link">Quiz</a>
+        
+        <div class="info-section-title">Informações</div>
+        <a href="./problema.html" class="__mobile-link">O Problema</a>
+        <a href="./tecnologia.html" class="__mobile-link">Tecnologias</a>
+        <a href="./objetivos.html" class="__mobile-link">Objetivos</a>
+        <a href="./publico.html" class="__mobile-link">Público-Alvo</a>
+        <a href="./beneficios.html" class="__mobile-link">Benefícios</a>
+        <a href="./solucao.html" class="__mobile-link">Solução</a>
+    </div>
+    <div class="info-menu-container">
+        <div class="info-menu">
+            <a href="./problema.html" class="__secao-link">O Problema</a>
+            <a href="./tecnologia.html" class="__secao-link">Tecnologias</a>
+            <a href="./objetivos.html" class="__secao-link">Objetivos</a>
+            <a href="./publico.html" class="__secao-link">Público-Alvo</a>
+            <a href="./beneficios.html" class="__secao-link">Benefícios</a>
+            <a href="./solucao.html" class="__secao-link">Solução</a>
+        </div>
+    </div>
+    <div class="page-content">
+        <div class="simulador-header">
+            <h1 class="simulador-title">Simulador de Enchentes</h1>
+            <p class="simulador-description">Calcule o risco de enchente com base na chuva e no nível do rio</p>
+        </div>
+        
+        <div class="simulador-container">
+            <div class="simulador-form-container">
+                <div id="alerta"></div>
+                
+                <div class="simulador-form">
+                    <div class="form-group">
+                        <label for="cidade">Escolha uma cidade:</label>
+                        <select id="cidade" name="cidade">
+                            <option value="Porto Alegre">Porto Alegre</option>
+                            <option value="Canoas">Canoas</option>
+                            <option value="Pelotas">Pelotas</option>
+                            <option value="Santa Maria">Santa Maria</option>
+                            <option value="Caxias do Sul">Caxias do Sul</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rio">Escolha o rio mais próximo:</label>
+                        <select id="rio" name="rio">
+                        </select>
+                    </div>
+                    
+                    <div class="simulador-info">
+                        <p><strong>Nível médio normal do rio:</strong> <span id="nivel-normal">2.50 metros</span></p>
+                        <p><strong>Nível crítico estimado de transbordamento:</strong> <span id="nivel-critico">4.00 metros</span></p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="chuva">Informe a chuva nas últimas 24h (em mm):</label>
+                        <input type="number" id="chuva" name="chuva" min="0" max="300" step="1" value="0">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nivel-rio">Informe o nível do rio (em metros):</label>
+                        <input type="number" id="nivel-rio" name="nivel-rio" min="0" max="50" step="0.1" value="0">
+                    </div>
+                    
+                    <button id="btn-verificar" class="btn-verificar">Verificar risco de enchente</button>
+                
+                    <div id="resultado-simulacao"></div>
+                </div>
+            </div>
+            
+            <div class="historico-container">
+                <div id="historico-simulacoes">
+                    <h3>📜 Histórico de Simulações</h3>
+                    <p>Sem simulações no histórico.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="simulador-form-container">
+            <div class="contato-form-container">
+                <h3>Cadastre-se para Receber Alertas</h3>
+                <form id="contato-form" class="contato-form">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo*</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefone">Telefone para SMS</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="endereco">Endereço Completo*</label>
+                        <input type="text" id="endereco" name="endereco" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cidade-form">Cidade*</label>
+                        <select id="cidade-form" name="cidade-form" required>
+                            <option value="">Selecione uma cidade</option>
+                            <option value="Porto Alegre">Porto Alegre</option>
+                            <option value="Canoas">Canoas</option>
+                            <option value="Pelotas">Pelotas</option>
+                            <option value="Santa Maria">Santa Maria</option>
+                            <option value="Caxias do Sul">Caxias do Sul</option>
+                            <option value="Outra">Outra</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interesse">Interesse em Alertas*</label>
+                        <select id="interesse" name="interesse" required>
+                            <option value="">Selecione seu interesse</option>
+                            <option value="residencial">Residencial (minha casa)</option>
+                            <option value="comercial">Comercial (meu negócio)</option>
+                            <option value="institucional">Institucional (órgão público)</option>
+                            <option value="educacional">Educacional (pesquisa)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensagem">Informações Adicionais</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="Descreva detalhes sobre sua localização ou necessidades específicas de alerta"></textarea>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="termos" name="termos" required>
+                        <label for="termos">Concordo em receber alertas e informações sobre enchentes*</label>
+                    </div>
+                    
+                    <button type="submit">Cadastrar para Alertas</button>
+                </form>
+                
+                <div id="form-success-message" class="form-success-message">
+                    <p>Cadastro realizado com sucesso! Você receberá alertas sobre riscos de enchente na sua região.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="__footer">
+        <div class="__footer-container">
+            <h3 class="__titulo-footer" style="color: var(--cor-texto-claro); border-color: var(--cor-destaque);">Simulador de Enchentes</h3>
+            <p class="__paragrafo">Tecnologia a serviço da prevenção e segurança</p>
+            <div class="__social-links">
+                <a href="#" class="__social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="__social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="__social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="__social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="__paragrafo">&copy; 2025 Todos os direitos reservados</p>
+        </div>
+    </footer>
+    
+    <script src="../js/script.js"></script>
+    <script src="../js/simulador.js"></script>
+    <script src="../js/contato-form.js"></script>
+</body>
+</html>
