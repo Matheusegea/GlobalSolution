@@ -1,0 +1,111 @@
+.contato-form-container {
+    background-color: var(--cor-fundo-secundario, #f5f5f5);
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contato-form-container h3 {
+    color: var(--cor-destaque, #0078d4);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid var(--cor-destaque, #0078d4);
+    padding-bottom: 10px;
+}
+
+.contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contato-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contato-form label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--cor-texto-escuro, #333);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contato-form input,
+.contato-form select,
+.contato-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.contato-form input:focus,
+.contato-form select:focus,
+.contato-form textarea:focus {
+    border-color: var(--cor-destaque, #0078d4);
+    outline: none;
+}
+
+.contato-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contato-form .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contato-form .checkbox-group input {
+    width: auto;
+    margin: 0;
+}
+
+.contato-form button {
+    background-color: var(--cor-destaque, #0078d4);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.contato-form button:hover {
+    background-color: var(--cor-destaque-hover, #005fa3);
+}
+
+.form-success-message {
+    display: none;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .contato-form-container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contato-form-container {
+        padding: 15px;
+    }
+    
+    .contato-form button {
+        padding: 10px;
+    }
+}
