@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Enchentes | AlertaEnchentes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+<body>
+    <header class="__header">
+        <div class="__header-container">
+            <div class="__logo">Alerta<span>Enchentes</span></div>
+            <nav class="__nav">
+                <a href="../../index.html" class="__nav-link">Home</a>
+                <a href="./simulador.html" class="__nav-link">Simular Enchente</a>
+                <a href="./quiz.html" class="__nav-link ativo">Quiz</a>
+            </nav>
+            <div class="__menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <div class="__mobile-nav" id="mobileNav">
+        <div class="__close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </div>
+        <a href="../../index.html" class="__mobile-link">Home</a>
+        <a href="./simulador.html" class="__mobile-link">Simular Enchente</a>
+        <a href="./quiz.html" class="__mobile-link ativo">Quiz</a>
+    </div>
+    <section class="__quiz-container" id="quizPage">
+        <div class="__quiz-header">
+            <h2></i> Enchentes no Brasil: Tecnologia como Solução</h2>
+            <p>Teste seus conhecimentos e aprenda como a tecnologia pode prevenir tragédias!</p>
+        </div>
+
+        <div class="__quiz-progress">
+            <div class="__progress-bar">
+                <div class="__progress-bar-fill" id="progressBarFill"></div>
+            </div>
+            <span id="progressText">1/10</span>
+        </div>
+
+        <div class="__quiz-question" id="questionContainer">
+        </div>
+
+        <div class="__quiz-options" id="optionsContainer">
+        </div>
+
+        <div class="__quiz-feedback" id="feedbackContainer"></div>
+
+        <button class="__quiz-button" id="nextButton" disabled>Próxima <i class="fas fa-arrow-right"></i></button>
+        <button class="__quiz-button" id="restartButton" style="display: none;">
+            <i class="fas fa-redo"></i> Recomeçar Quiz
+        </button>
+    </section>
+    <footer class="__footer">
+        <div class="__footer-container">
+            <h3 class="__titulo-footer" style="color: var(--cor-texto-claro); border-color: var(--cor-destaque);">Sistema de Alerta de Enchentes</h3>
+            <p class="__paragrafo">Tecnologia a serviço da segurança e prevenção</p>
+            <div class="__social-links">
+                <a href="#" class="__social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="__social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="__social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="__social-link"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="__paragrafo">&copy; 2025 Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+    <script src="../js/quiz.js"></script>
+
+</body>
+</html>
