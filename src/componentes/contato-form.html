@@ -1,0 +1,64 @@
+<div class="contato-form-container">
+    <h3>Cadastre-se para Receber Alertas</h3>
+    <form id="contato-form" class="contato-form">
+        <div class="form-group">
+            <label for="nome">Nome Completo*</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">E-mail*</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="telefone">Telefone para SMS</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
+        </div>
+        
+        <div class="form-group">
+            <label for="endereco">Endereço Completo*</label>
+            <input type="text" id="endereco" name="endereco" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="cidade-form">Cidade*</label>
+            <select id="cidade-form" name="cidade-form" required>
+                <option value="">Selecione uma cidade</option>
+                <option value="Porto Alegre">Porto Alegre</option>
+                <option value="Canoas">Canoas</option>
+                <option value="Pelotas">Pelotas</option>
+                <option value="Santa Maria">Santa Maria</option>
+                <option value="Caxias do Sul">Caxias do Sul</option>
+                <option value="Outra">Outra</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="interesse">Interesse em Alertas*</label>
+            <select id="interesse" name="interesse" required>
+                <option value="">Selecione seu interesse</option>
+                <option value="residencial">Residencial (minha casa)</option>
+                <option value="comercial">Comercial (meu negócio)</option>
+                <option value="institucional">Institucional (órgão público)</option>
+                <option value="educacional">Educacional (pesquisa)</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="mensagem">Informações Adicionais</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Descreva detalhes sobre sua localização ou necessidades específicas de alerta"></textarea>
+        </div>
+        
+        <div class="checkbox-group">
+            <input type="checkbox" id="termos" name="termos" required>
+            <label for="termos">Concordo em receber alertas e informações sobre enchentes*</label>
+        </div>
+        
+        <button type="submit">Cadastrar para Alertas</button>
+    </form>
+    
+    <div id="form-success-message" class="form-success-message">
+        <p>Cadastro realizado com sucesso! Você receberá alertas sobre riscos de enchente na sua região.</p>
+    </div>
+</div>
